@@ -15,8 +15,13 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+};
+
+const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
+// eslint-disable-next-line no-unused-vars
+module.exports = (on, config) => {
+  on("task", { downloadFile });
+};
